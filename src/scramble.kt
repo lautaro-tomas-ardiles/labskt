@@ -1,5 +1,5 @@
 
-fun scrambleWords(words: List<String>): List<String> {
+private fun scrambleWords(words: List<String>): List<String> {
     return words.map { word ->
         word.toList().shuffled().joinToString("")
     }
