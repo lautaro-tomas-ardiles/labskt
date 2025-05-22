@@ -12,7 +12,7 @@ fun main() {
             "v","w","x","y","z"
     )
 
-    val translate = StringBuilder()
+    var translate = ""
 
     print("¿vas a traducir morse a letras? (si | no) : ")
     val morse = readln()
@@ -32,26 +32,28 @@ fun main() {
         "si" -> {
             for (x in words) {
                 val index = dictionaryMorse.indexOf(x)
+
                 if (index != -1) {
-                    translate.append(dictionary[index] + "  ,   ")
+                    translate += dictionary[index] + " , "
                 }else{
                     print("error una de las entradas no esta en el dicionario  ")
                 }
             }
 
-            println("$translate")
+            println(translate)
         }
         "no" -> {
             for (x in words) {
                 val index = dictionary.indexOf(x)
+
                 if (index != -1) {
-                    translate.append(dictionaryMorse[index] + "  ,   ")
+                    translate += dictionaryMorse[index] + " , "
                 }else{
                     print("error una de las entradas no esta en el dicionario ")
                 }
             }
 
-            println("$translate")
+            println(translate)
         }
         else -> {
             print("las posibles entradas son si o no")
